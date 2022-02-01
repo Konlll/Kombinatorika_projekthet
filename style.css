@@ -143,7 +143,6 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-/* end of hiding */
 
 button.combination-button{
     text-decoration: none;
@@ -279,4 +278,3 @@ span.big-parentheses{
       opacity: 1;
     }
   }
-  
