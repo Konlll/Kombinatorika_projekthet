@@ -134,6 +134,18 @@ input.combination-input:focus{
     border: 5px solid #14a76c;
 }
 
+  
+  /* A firefoxban se jelenlenek meg gombok a számbemeneteknél */
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  
+  input[type=number] {
+      -moz-appearance:textfield;
+  }
+
 button.combination-button{
     text-decoration: none;
     font-size: 40px;
@@ -268,4 +280,3 @@ span.big-parentheses{
       opacity: 1;
     }
   }
-  
