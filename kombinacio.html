@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombináció</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="item subpage">
+            <div class="form-control">
+                <label for="n_value">Hány elemből kell választani?</label>
+                <input type="number" id="n_value" placeholder="Írjon be egy számot..." class="combination-input">
+            </div>
+            <div class="form-control">
+                <label for="k_value">Hány elemet kell kiválasztani?</label>
+                <input type="number" id="k_value" placeholder="Írjon be egy számot..." class="combination-input">
+            </div>
+            <div class="form-control">
+                <button type="submit" id="submit" class="combination-button">Számítás</button>
+            </div>
+            <h2 class="combination-h2">Kombinációk értékei:</h2>
+            <p class="combination-p">
+                Az ismétlés nélküli kombinációk száma: {itt javascript}
+            </p>
+            <p class="combination-p">
+                Az ismétléses kombinációk száma: {itt javascript}
+            </p>
+            <h2 class="combination-h2">Számolási mellékadatok:</h2>
+            <p class="combination-p">'n' értéke: {itt javascript}</p>
+            <p class="combination-p">'k' értéke: {itt javascript}</p>
+            <p class="combination-p">'n' faktoriálisa: {itt javascript}</p>
+            <p class="combination-p">'k' faktoriálisa: {itt javascript}</p>
+        </div>
+        <div class="item subpage">
+            <h1 class="combination-text">Kombináció</h1>
+            <h2 class="combination-h2">Ismétlés nélküli kombináció</h2>
+            <p class="combination-p">Ha "n" elem közül "k" elemet kiválasztunk és az elemek sorrendjére nem vagyunk tekintettel akkor "n" elem "k"-ad osztályú kombinációjának tekintjük.</p>
+            <p class="combination-p formula">
+                C<sub>n,k</sub>
+                <sup>
+                    = <span class="frac"> 
+                        <span>n!</span>
+                        <span class="symbol">/</span> 
+                        <span class="bottom">k!(n-k)!</span>
+                    </span>
+                </sup>
+            </p>
+            <p class="combination-p">Példa: Hány darab 6-os lottó szelvényt kéne vásárolnunk a biztos találathoz?</p>    
+            <p class="combination-p formula">
+                C<sub>n,k</sub>
+                <sup>
+                    = <span class="frac"> 
+                        <span>45!</span>
+                        <span class="symbol">/</span> 
+                        <span class="bottom">45!/6!(45-6)!</span>
+                    </span>
+                </sup> =
+            </p>
+            <p class="combination-p formula">
+                = <sup>
+                    <span class="frac"> 
+                        <span>45*44*43*42*41*40*39</span>
+                        <span class="symbol">/</span> 
+                        <span class="bottom">6*5*4*3*2*1*39</span>
+                    </span>
+                </sup> = 15*44*43*7*41 = <u>8145060</u>
+            </p>
+            <h2 class="combination-h2">Ismétléses kombináció</h2>
+            <p class="combination-p">Ha “k” elem között vannak ismétlődőek akkor ismétléses kombinációról beszélünk.</p>
+            <p class="combination-p formula">
+                C<sub>n,k(i)</sub>
+                <sup>
+                    = <span class="big-parentheses">(</span><span class="frac"> 
+                        <span>n+k-1</span>
+                        <span class="symbol"></span> 
+                        <span class="bottom hide-border">k</span>
+                    </span><span class="big-parentheses">)</span>
+                </sup>
+            </p>
+            <p class="combination-p">Példa: 4 elemből {a,b,c,d} ki kell választani kettőt, úgy hogy az elemek ismétlődhetnek:</p>
+            <p class="combination-p formula">
+                C<sub>4,2</sub> = 
+                (4+2−1)=(5)=10
+            </p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
