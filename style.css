@@ -134,6 +134,17 @@ input.combination-input:focus{
     border: 5px solid #14a76c;
 }
 
+/* Hide input[type=number] arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* end of hiding */
+
 button.combination-button{
     text-decoration: none;
     font-size: 40px;
