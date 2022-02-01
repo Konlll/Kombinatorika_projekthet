@@ -29,6 +29,9 @@ function calc_combination() {
     } else {
         alert("Kérjük töltse ki mindkét mezőt")
     }
+
+    document.getElementById("n_value").value = ""
+    document.getElementById("k_value").value = ""
 }
 
 function calc_factorial(input_num) {
