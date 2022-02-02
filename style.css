@@ -365,6 +365,10 @@ button.permutation-button:hover {
 
 }
 
+button#add{
+    margin-right: 10px;
+}
+
 /* Variation Website */
 input.variation-input{
     background-color: transparent;
