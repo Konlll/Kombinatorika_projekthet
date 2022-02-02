@@ -89,7 +89,7 @@ h1.variation-text{
 
 .item{
     width: 30%;
-    height: 100vh;
+    min-height: 100vh;
     border: 1px solid #747474;
     display: flex;
     justify-content: center;
@@ -99,6 +99,8 @@ h1.variation-text{
 }
 
 img {
+    width: auto;
+    height: auto;
     margin-bottom: 50px;
 }
 
@@ -108,7 +110,7 @@ img {
     justify-content: space-between;
 }
 .item.subpage{
-    width: 48%;
+    min-width: 48%;
     justify-content: flex-start;
 }
 select{
@@ -129,6 +131,7 @@ input.combination-input{
     font-family: 'VT323', sans-serif;
     transition: all;
     transition-duration: 0.1s;
+    max-width: 100%;
 }
 input.combination-input:focus{
     border: 5px solid #14a76c;
@@ -161,6 +164,8 @@ button.combination-button:hover{
 }
 
 .form-control{
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
 }
 
@@ -219,8 +224,22 @@ span.big-parentheses{
         background-color: #272727;
     }
     .item{
-        width: 60%;
+        width: 80%;
         margin-top: 20px;
+    }
+    .item.subpage{
+        width: 80%;
+    }
+}
+
+@media(max-width: 622px){
+    input.combination-input{
+        max-width: 300px;
+        margin: auto;
+    }
+    .form-control label{
+        font-size: 30px;
+        text-align: center;
     }
 }
 

@@ -10,7 +10,7 @@ function calc_combination() {
         k_factorial = calc_factorial(k);
         n_minus_k_factorial = calc_factorial(n-k)
 
-        combination_val = n_factorial/(k_factorial*n_minus_k_factorial)
+        combination_val = Math.floor(n_factorial/(k_factorial*n_minus_k_factorial))
 
         // Ismétléses kombináció
         // Elsőnek kiszámoljuk az (n+k-1)! értékét
@@ -18,7 +18,7 @@ function calc_combination() {
         // Másodjára kiszámoljuk az (n-1)! értékét
         second_val = calc_factorial(n-1)
 
-        combination_with_repetition_val = first_val / (k_factorial * second_val)
+        combination_with_repetition_val = Math.floor(first_val / (k_factorial * second_val))
 
         document.getElementById("n_value_text").textContent = `'n' értéke: ${n}`;
         document.getElementById("k_value_text").textContent = `'k' értéke: ${k}`;
@@ -39,5 +39,5 @@ function calc_factorial(input_num) {
     for (i = 1; i <= input_num; i++) {
         factorial = factorial * i;
     }
-    return factorial
+    return Math.floor(factorial)
 }
