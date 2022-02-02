@@ -2,14 +2,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
 }
 
-body{
+body {
     background-color: #272727;
     font-family: 'VT323', sans-serif;
     color: #fff;
@@ -19,18 +19,21 @@ body{
 }
 
 
-h1{
+h1 {
     letter-spacing: 2px;
     font-size: 60px;
 }
 
-p{
+p.main-p {
     font-size: 35px;
     text-align: center;
     margin-top: 20px;
 }
 
-a{
+a.combination-link,
+a.permutation-link,
+a.variation-link,
+.overlay a {
     text-decoration: none;
     font-size: 45px;
     color: #fff;
@@ -40,54 +43,54 @@ a{
     transition-duration: 0.5s;
 }
 
-a.permutation-link{
+a.permutation-link {
     color: #ffe400;
     border: 1px solid #ffe400;
 }
 
-a.permutation-link:hover{
+a.permutation-link:hover {
     background-color: #ffe400;
     color: #000;
 }
 
-a.combination-link{
+a.combination-link {
     color: #14a76c;
     border: 1px solid #14a76c;
 }
 
-a.combination-link:hover{
+a.combination-link:hover {
     background-color: #14a76c;
     color: #000;
 }
 
-a.variation-link{
+a.variation-link {
     color: #ff652f;
     border: 1px solid #ff652f;
 }
 
-a.variation-link:hover{
+a.variation-link:hover {
     background-color: #ff652f;
     color: #000;
 }
 
-h1.permutation-text{
+h1.permutation-text {
     color: #ffe400;
 }
 
-h1.combination-text{
+h1.combination-text {
     color: #14a76c;
 }
 
-h1.variation-text{
+h1.variation-text {
     color: #ff652f;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: space-around;
 }
 
-.item{
+.item {
     width: 30%;
     min-height: 100vh;
     border: 1px solid #747474;
@@ -106,14 +109,16 @@ img {
 
 
 /* Subpages */
-.container.subpage{
+.container.subpage {
     justify-content: space-between;
 }
-.item.subpage{
+
+.item.subpage {
     min-width: 48%;
     justify-content: flex-start;
 }
-select{
+
+select {
     background-color: transparent;
     padding: 10px;
     font-size: 32px;
@@ -122,7 +127,8 @@ select{
     font-family: 'VT323', sans-serif;
     margin-top: 20px;
 }
-input.combination-input{
+
+input.combination-input {
     background-color: transparent;
     padding: 10px;
     font-size: 40px;
@@ -133,21 +139,23 @@ input.combination-input{
     transition-duration: 0.1s;
     max-width: 100%;
 }
-input.combination-input:focus{
+
+input.combination-input:focus {
     border: 5px solid #14a76c;
 }
 
 /* Hide input[type=number] arrows */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type=number] {
-  -moz-appearance: textfield;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-button.combination-button{
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+button.combination-button {
     text-decoration: none;
     font-size: 40px;
     color: #fff;
@@ -158,32 +166,35 @@ button.combination-button{
     cursor: pointer;
     border: 1px solid #14a76c;
 }
-button.combination-button:hover{
+
+button.combination-button:hover {
     background-color: #14a76c;
     color: #000;
 }
 
-.form-control{
+.form-control {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
 }
 
 /* Combination website */
-h2.combination-h2{
+h2.combination-h2 {
     color: #fff;
     align-self: flex-start;
     font-size: 30px;
     margin-top: 30px;
 }
 
-p.combination-p{
+p.combination-p {
     align-self: flex-start;
     font-size: 25px;
     text-align: left;
     color: lightgrey;
+    margin-top: 20px;
 }
-p.combination-p.formula{
+
+p.combination-p.formula {
     font-size: 30px;
 
 }
@@ -195,49 +206,195 @@ p.combination-p.formula{
     letter-spacing: .001em;
     text-align: center;
 }
+
 .frac>span {
     display: block;
     padding: .1em;
 }
+
 .frac span.bottom {
     border-top: thin solid #fff;
 }
-.frac span.bottom.hide-border{
+
+.frac span.bottom.hide-border {
     border: none;
 }
+
 .frac span.symbol {
     display: none;
 }
-span.big-parentheses{
+
+span.big-parentheses {
     font-size: 60px;
 }
-.form-control label{
+
+.form-control label {
     font-size: 40px;
+}
+
+/* Permuattion website */
+body.permutation-background {
+    background-color: #323232 !important;
+    background-image: none;
+}
+
+.cont {
+    border: 1px solid #5e5e5e;
+    margin: 10px;
+    padding: 15px;
+}
+
+.title-big {
+    font-size: 45px;
+    text-align: center;
+    color: #ffe400;
+}
+
+select {
+    padding: 10px;
+    width: 100%;
+    background-color: transparent;
+    outline: none !important;
+    color: white;
+    border: 1px solid #ffe400;
+    font-size: 20px;
+}
+
+select option {
+    color: #5e5e5e;
+}
+
+.cont-box {
+    margin-top: 10px;
+    font-size: 18.5px;
+}
+
+.cont-box .content {
+    border: 1px solid #5e5e5e;
+    padding: 10px;
+    margin-top: -3px;
+}
+
+
+.content {
+    border: 1px solid #5e5e5e;
+    padding: 10px;
+}
+
+.title {
+    text-align: left;
+    font-size: 30px;
+    color: #fff;
+    text-indent: 5px;
+}
+
+.title h2 {
+    margin-top: 30px;
+}
+
+.medium {
+    font-size: 20px;
+}
+
+.margintop {
+    margin-top: 10px;
+}
+
+input.permutation-input {
+    border: 1px solid #ffe400;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+
+button.permutation-button {
+    display: block;
+    float: right;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    padding: 2.5px;
+    width: 45%;
+    transition: all;
+    transition-duration: 0.5s;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #ffe400;
+}
+
+button.permutation-button:hover {
+    background-color: #ffe400;
+    color: #000;
+}
+
+.addinp {
+    width: 47.5px;
+    text-align: center;
+    margin: 2.5px;
+}
+
+.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: left;
+}
+
+.calc-box {
+    margin-top: 15px;
+}
+
+.overlay {
+    position: absolute;
+    float: left;
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+.overlay a {
+    font-size: 70px;
+}
+
+.overlay:hover {
+    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+    animation: heartbeat 1.5s ease-in-out infinite both;
+
 }
 
 /* Media Queries */
 
-@media(max-width: 1370px){
-    .container{
+@media(max-width: 1370px) {
+    .container {
         flex-direction: column;
         align-items: center;
         background-color: #272727;
     }
-    .item{
+
+    .item {
         width: 80%;
         margin-top: 20px;
     }
-    .item.subpage{
+
+    .item.subpage {
         width: 80%;
     }
 }
 
-@media(max-width: 622px){
-    input.combination-input{
+@media(max-width: 622px) {
+    .form-control:first-child{
+        margin-top: 50px;
+    }
+
+    input.combination-input {
         max-width: 300px;
         margin: auto;
     }
-    .form-control label{
+
+    .form-control label {
         font-size: 30px;
         text-align: center;
     }
@@ -245,55 +402,96 @@ span.big-parentheses{
 
 /* Animations */
 .fade-in-fwd.animation0,
-.scale-in-top.animation0{
+.scale-in-top.animation0 {
     animation-delay: 0.5s;
 }
+
 .fade-in-fwd.animation1,
-.scale-in-top.animation1{
+.scale-in-top.animation1 {
     animation-delay: 1s;
 }
+
 .fade-in-fwd.animation2,
-.scale-in-top.animation2{
+.scale-in-top.animation2 {
     animation-delay: 1.5s;
 }
 
 .scale-in-top {
-	-webkit-animation: scale-in-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: scale-in-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -webkit-animation: scale-in-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-  @keyframes scale-in-top {
+
+@keyframes scale-in-top {
     0% {
-      -webkit-transform: scale(0);
-              transform: scale(0);
-      -webkit-transform-origin: 50% 0%;
-              transform-origin: 50% 0%;
-      opacity: 1;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        opacity: 1;
     }
+
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-transform-origin: 50% 0%;
-              transform-origin: 50% 0%;
-      opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        opacity: 1;
     }
-  }
-  
+}
+
 
 
 .fade-in-fwd {
-	-webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-  @keyframes fade-in-fwd {
+@keyframes fade-in-fwd {
     0% {
-      -webkit-transform: translateZ(-80px);
-              transform: translateZ(-80px);
-      opacity: 0;
+        -webkit-transform: translateZ(-80px);
+        transform: translateZ(-80px);
+        opacity: 0;
     }
+
     100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
     }
   }
+  

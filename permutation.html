@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permutáció</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="permutation-background">
+    <div class="overlay">
+      <a href="../index.html"><</a>
+    </div>
+
+    <div class="container-fluid min-vh-100 d-flex flex-column">
+      <div class="row flex-grow-1">
+        <div class="col-md cont">
+          <div class="title-big">Permutáció</div>
+          <div class="content">
+            <select id="perm-select">
+              <option selected value="1">Ismétlés nélküli permutáció</option>
+              <option value="2">Ismétléses permutáció</option>
+            </select>
+          </div>
+          <div id="ism-nelkuli">
+            <div class="cont-box">
+              <div class="title">Definició</div>
+              <div class="content">
+                Egy adott n elemű halmaz elemeinek egy ismétlés nélküli
+                permutációjának nevezzük az n különböző elem egy sorba
+                rendezését. Jelölése: P<sup>n</sup>
+              </div>
+            </div>
+            <div class="cont-box">
+              <div class="title">Megismerése</div>
+              <div class="content">
+                A fogalom megismerése után a következő lépés az, hogy megtudjuk,
+                hogyan kell kiszámolni n elem összes ismétlés nélküli
+                permutációját. Nézzük is meg: Egy n elemű halmaz összes ismétlés
+                nélküli permutációinak száma n faktoriális, azaz:
+                <p class="medium">
+                  <b>P<sub>n</sub> = n + (n-1) * (n-2) * ... + 2 * 1 = n!</b>
+                </p>
+              </div>
+            </div>
+            <div class="cont-box">
+              <div class="title">
+                Ismétlés nélküli permutációval megoldható feladatok
+              </div>
+              <div class="content">
+                <p>
+                  <b>Feladat:</b> Hányféle sorrendben ülhet le egymás mellé 6
+                  ember?
+                </p>
+                <p>
+                  <b>Segítség:</b> Arra vagyunk kíváncsiak, hogy összesen
+                  hányféleképpen lehet sorba rendezni 6 embert. Azaz 6 elem
+                  ismétlés nélküli kombinációinak a számát keressük.
+                </p>
+                <p>
+                  <b>Megoldás:</b> Tudjuk tehát, hogy n=6, innen a képletbe
+                  helyettesítve:
+                </p>
+                <p>P<sub>6</sub> = 6! = 6 * 5 * 4 * 3 * 2 * 1 = 720.</p>
+                <p>Azaz 720 féleképpen tud leülni egymás mellé 6 ember.</p>
+                <p>
+                  <b>Feladat:</b> Egy fagyizóban 3 gombócot szeretnénk a
+                  tölcsérünkbe választani: csokoládét, vaníliát és puncsot.
+                  Hányféle sorrendben kérhetjük a gombócokat?
+                </p>
+                <p>
+                  <b>Segítség:</b> A tölcsérben alul 3-féle, középen 2-féle,
+                  felül 1-féle gombóc lehet, mivel minden gombócot csak egyszer
+                  tehetünk a tölcsérbe. Vagyis a feladatban 3 elem ismétlés
+                  nélküli permutációinak számát keressük.
+                </p>
+                <p>
+                  <b>Megoldás:</b> Vagyis a feladatban n = 3, így
+                  P<sub>3</sub>-at keressük. Így a megoldás:
+                </p>
+                <p>P<sub>3</sub> = 3! = 3 * 2 * 1 = 6</p>
+                <p>Azaz hatféleképpen kérhetjük a fagyinkat.</p>
+              </div>
+            </div>
+          </div>
+          <div id="ismetleses" style="display: none">
+            <div class="cont-box">
+              <div class="title">Definició</div>
+              <div class="content">
+                Ha az n elem között van k<sub>1</sub>, k<sub>2</sub>,..., k<sub
+                  >m</sub
+                >
+                egymással megegyező elem, akkor az elemek egy sorba rendezését
+                ismétléses permutációnak nevezzük.
+                <p class="medium">
+                  Jelölése: P<sub>n</sub
+                  ><sup>k<sub>1</sub>, k<sub>2</sub>, ..., k<sub>m</sub></sup
+                  >.
+                </p>
+              </div>
+            </div>
+            <div class="cont-box">
+              <div class="title">Tisztázás</div>
+              <div class="content">
+                Tehát a különbség a következő: ismétlés nélküli permutáció
+                esetén csupa különböző elemet rendezünk sorba, még ismétléses
+                permutáció esetén vannak megegyező elemek.
+              </div>
+            </div>
+            <div class="cont-box">
+              <div class="title">Kiszámolása</div>
+              <div class="content">
+                <p>
+                  Nézzük most itt is meg, hogyan kell kiszámolni az összes
+                  lehetséges ismétléses permutációt!
+                </p>
+                <p>
+                  Ha egy n elemű halmazban az n elem között k<sub>1</sub>,
+                  k<sub>2</sub>, ..., k<sub>m</sub> egymással megegyező elem
+                  van, és k<sub>1</sub> + k<sub>2</sub> + ... + k<sub>m</sub> =
+                  n, akkor ezeket az elemeket
+                </p>
+                <p>
+                  P<sub>n</sub
+                  ><sup>k<sub>1</sub>, k<sub>2</sub>, ..., k<sub>m</sub></sup> =
+                  <span class="frac">
+                    <span>n!</span><span class="symbol">/</span>
+                    <span class="bottom">
+                      k<sub>1</sub>! * k<sub>2</sub>! * ... *
+                      k<sub>m</sub>!</span
+                    ></span
+                  >
+                </p>
+                <p>
+                  különböző módon lehet sorba rendezni. Ez a halmaz összes
+                  ismétléses permutációjának száma.
+                </p>
+              </div>
+            </div>
+            <div class="cont-box">
+              <div class="title">
+                Ismétléses permutációval megoldható feladatok
+              </div>
+              <div class="content">
+                <p>
+                  <b>Feladat:</b> Hányféleképpen tudunk sorba rendezni 4 kék és
+                  3 sárga golyót?
+                </p>
+                <p>
+                  <b>Segítség:</b> Sorba rendezésről van szó, tehát tudjuk, hogy
+                  permutáció lesz a segítségünkre a megoldás során. Továbbá azt
+                  is látjuk, hogy vannak ugyanolyan elemek (sárga és kék
+                  golyók), tehát ismétléses permutációt kell használnunk.
+                </p>
+                <p>
+                  <b>Megoldás:</b> A feladatban 7 golyó szerepel, vagyis n = 7.
+                  Ezek között viszont 4 és 3 ugyanolyan színű van, vagyis
+                  k<sub>1</sub>=4, k<sub>2</sub> = 3. Tehát a P<sub>7</sub
+                  ><sup>4,3</sup>-at keressük. Így a megoldás a képletbe
+                  behelyettesítés segítségével:
+                </p>
+                <p>
+                  P<sub>7</sub><sup>4,3</sup> =
+                  <span class="frac"
+                    ><span>7!</span><span class="symbol">/</span
+                    ><span class="bottom">4! * 3!</span></span
+                  >
+                  =
+                  <span class="frac"
+                    ><span>7 * 6 * 5 * 4 * 3 * 2 * 1</span
+                    ><span class="symbol">/</span
+                    ><span class="bottom"
+                      >(4 * 3 * 2 * 1) * (3 * 2 * 1)</span
+                    ></span
+                  >
+                  = 7 * 5 = 35
+                </p>
+                <p>Azaz 35 féleképpen tudjuk sorba rendezni a golyókat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md cont">
+          <div class="title-big">Feladatmegoldó</div>
+          <div class="content" oncontextmenu="return false;">
+            <form id="ismnelkuli-form">
+              <input
+                class="inp permutation-input"
+                id="n-count"
+                placeholder="Add meg az elemek számát"
+                type="number"
+              />
+              <div class="calc-box">
+                <button class="permutation-button" type="submit" id="calculate">Kiszámolás</button>
+              </div>
+            </form>
+            <form id="ismetleses-form" style="display: none;">
+              <input
+                class="inp permutation-input"
+                id="n-count-2"
+                placeholder="Add meg az elemek számát"
+                type="number"
+              />
+              <div class="content" id="k-elem">
+                
+              </div>
+              <div class="calc-box">
+                <button type="button" class="floatleft permutation-button" id="add">
+                  Ismétlődés hozzáadása
+                </button>
+                <button type="submit" id="calculate" class="permutation-button">Kiszámolás</button>
+              </div>
+            </form>
+            <div class="cont-box">
+              <div class="title"><h2>Eredmény</h2></div>
+              <div class="content">
+                <b><a id="out"></a></b>
+                <br />
+                <a id="out-long"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
