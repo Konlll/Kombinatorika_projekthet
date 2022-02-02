@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáció</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="overlay">
+        <a href="index.html"><</a>
+    </div>
+    <div class="container">
+        <div class="item subpage">
+            <div class="form-control">
+                <label for="n_value">Hány elemből kell választani?</label>
+                <input type="number" id="n_value" placeholder="Írjon be egy számot..." class="variation-input">
+            </div>
+            <div class="form-control">
+                <label for="k_value">Hány elemet kell kiválasztani?</label>
+                <input type="number" id="k_value" placeholder="Írjon be egy számot..." class="variation-input">
+            </div>
+            <div class="form-control">
+                <button type="submit" id="submit" onclick="calc_variation()" class="variation-button">Számítás</button>
+            </div>
+            <h2 class="variation-h2">Variáció értékei:</h2>
+            <p class="variation-p" id="variation_val">
+                Az ismétlés nélküli variációk száma: 0
+            </p>
+            <p class="variation-p" id="variation_with_repetition_val">
+                Az ismétléses variációk száma: 0
+            </p>
+            <h2 class="variation-h2">Számolási mellékadatok:</h2>
+            <p class="variation-p" id="n_value_text">'n' értéke: 0</p>
+            <p class="variation-p" id="k_value_text">'k' értéke: 0</p>
+            <p class="variation-p" id="n_factorial_value_text">'n' faktoriálisa: 0</p>
+            <p class="variation-p" id="k_factorial_value_text">'k' faktoriálisa: 0</p>
+        </div>
+        <div class="item subpage">
+            <h1 class="variation-text">Variáció</h1>
+            <h2 class="variation-h2">Ismétlés nélküli variáció</h2>
+            <p class="variation-p">A variáció ismétlés nélküli, ha egy elem csak egyszer fordulhat elő benne. Ebben az esetben ha n a halmaz elemszáma és k-adosztályú variációkat képzünk szükségképpen k≤n.</p>
+            <p class="variation-p formula">
+                V<sub>n,k</sub>
+                <sup>
+                    = <span class="frac"> 
+                        <span>n!</span>
+                        <span class="symbol">/</span> 
+                        <span class="bottom">(n-k)!</span>
+                    </span>
+                </sup>
+            </p>
+            <p class="variation-p">Példa: Ki szeretnénk festeni a szobánk 4 falát. Találunk a pincében hat fajta festéket: fehéret, sárgát, lilát, kéket, szürkét és feketét. A színeket nem keverhetjük össze és egy falra csak egyféle színt használhatunk. Hányféleképpen festhetjük ki a szobánkat, ha minden falat más színűre akarjuk festeni?</p>    
+            <p class="variation-p formula">
+                V<sub>4,6</sub> =
+                <sup>
+                    = <span class="frac"> 
+                        <span>6!</span>
+                        <span class="symbol">/</span> 
+                        <span class="bottom">(6-4)!</span>
+                    </span>
+                </sup> = 360
+            </p>
+            </p>
+            <h2 class="variation-h2">Ismétléses variáció</h2>
+            <p class="variation-p">Ismétléses variációkról beszélünk, ha egy elem többször is előfordulhat. Ebben az esetben k és n értéke független egymástól. </p>
+            <p class="variation-p formula">
+                Jelölés: V<sup>k,i</sup><sub>n</sub>
+            </p>
+            <p class="variation-p">Példa: Hány háromjegyű szám készíthető az 1, 3, 5, 7, 9 számjegyekből, ha egy számjegyet többször is felhasználhatunk?<br>Megoldás:5 számjegyünk van, de csak háromjegyű számot akarunk készíteni. Vagyis az 5 számjegy közül kell kiválasztanunk 3-at, így n=5 és k=3 </p>
+            <p class="variation-p formula">
+                V<sup>3,i</sup><sub>5</sub> = 
+                5<sup>3</sup>=125
+            </p>
+            <h2 class="variation-h2">Baranyai Zsolt</h2>
+            <p class="variation-p">1948.január 23.-án Budapesten született.</p>
+            <p class="variation-p">Az Eötvös Loránd Tudományegyetem Természettudományi Karán matematikus szakának elvégzése után ugyanott az Analízis I. tanszék oktatója lett.</p>
+            <p class="variation-p"><strong>Kombinatorikával</strong> foglalkozott. Nevezetes, hipergráfokra vonatkozó felbontási tétele, a róla elnevezett Baranyai-tétel régi sejtést oldott meg.</p>
+            <p class="variation-p" style="margin-bottom: 20px;">Illetve az ország egyik legkiválóbb blockflöte-játékosa volt.<br> 1978.április 18-án hunyt el.</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+<script src="script.js"></script>
+</html>

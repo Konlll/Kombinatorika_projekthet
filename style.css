@@ -365,6 +365,55 @@ button.permutation-button:hover {
 
 }
 
+/* Variation Website */
+input.variation-input{
+    background-color: transparent;
+    padding: 10px;
+    font-size: 40px;
+    border: 1px solid #ff652f;
+    color: #ff652f;
+    font-family: 'VT323', sans-serif;
+    transition: all;
+    transition-duration: 0.1s;
+    max-width: 100%;
+}
+input.variation-input:focus{
+    border: 5px solid #ff652f;
+}
+button.variation-button{
+    text-decoration: none;
+    font-size: 40px;
+    color: #fff;
+    padding: 20px;
+    transition: all;
+    transition-duration: 0.5s;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #ff652f;
+}
+button.variation-button:hover{
+    background-color:  #ff652f;
+    color: #000;
+}
+h2.variation-h2{
+    color: #fff;
+    align-self: flex-start;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+p.variation-p{
+    align-self: flex-start;
+    font-size: 25px;
+    text-align: left;
+    color: lightgrey;
+    margin-top: 20px;
+}
+p.variation-p.formula{
+    font-size: 30px;
+
+}
+
 /* Media Queries */
 
 @media(max-width: 1370px) {
@@ -390,6 +439,11 @@ button.permutation-button:hover {
     }
 
     input.combination-input {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    input.variation-input{
         max-width: 300px;
         margin: auto;
     }
