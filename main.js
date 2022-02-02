@@ -92,7 +92,7 @@ function addinp() {
   inp.value = "1";
 
   inp.min = 1;
-  inp.classList = "addinp";
+  inp.classList = "addinp permutation-input";
   inp.onmousedown = rightclick;
 
   console.log("add");

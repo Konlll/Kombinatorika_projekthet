@@ -331,7 +331,7 @@ button.permutation-button:hover {
 }
 
 .addinp {
-    width: 47.5px;
+    width: 47.5px !important;
     text-align: center;
     margin: 2.5px;
 }
