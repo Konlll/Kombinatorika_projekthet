@@ -44,7 +44,7 @@
             <h2 class="combination-h2">Ismétlés nélküli kombináció</h2>
             <p class="combination-p">Ha "n" elem közül "k" elemet kiválasztunk és az elemek sorrendjére nem vagyunk tekintettel akkor "n" elem "k"-ad osztályú kombinációjának tekintjük.</p>
             <p class="combination-p formula">
-                C<sub>n,k</sub>
+                C<sup>n</sup><sub>k</sub>
                 <sup>
                     = <span class="frac"> 
                         <span>n!</span>
@@ -55,7 +55,7 @@
             </p>
             <p class="combination-p">Példa: Hány darab 6-os lottó szelvényt kéne vásárolnunk a biztos találathoz?</p>    
             <p class="combination-p formula">
-                C<sub>n,k</sub> = (45)
+                C<sup>n</sup><sub>k</sub> = (45)
                 <sup>
                     = <span class="frac"> 
                         <span>45!</span>
@@ -74,7 +74,7 @@
                 </sup> = 15*44*43*7*41 = <u>8145060</u>
             </p>
             <h2 class="combination-h2">Ismétléses kombináció</h2>
-            <p class="combination-p">Ha “k” elem között vannak ismétlődőek akkor ismétléses kombinációról beszélünk.</p>
+            <p class="combination-p">Ha adott 'n' különböző elemeiből úgy választunk ki 'k' darabot, hogy egyet többször is (ismétlődve is) kiválasztunk, akkor ismétléses kombinációról beszélünk.</p>
             <p class="combination-p formula">
                 C<sub>n,k(i)</sub>
                 <sup>
@@ -94,11 +94,13 @@
             <p class="combination-p">1913.március 26. Budapesten született. 1996.szeptember 20-án szívrohamban elhunyt.</p>
             <p class="combination-p">Matematika szinte minded területén foglalkozott de az egyik kiemelkedő ág a <strong>kombinatorika</strong>. Életében ő volt a <strong>kombinatorika</strong> kutatásának és alkalmazásának talán legnagyobb egyénisége.</p>
             <p class="combination-p">Tagja volt a magyar (1956), az amerikai (1979), az indiai (1988), az angol (1989) és más tudományos akadémiáknak; munkásságáért több külföldi tudományos akadémia választotta tiszteletbeli tagjává.</p>
-            <p class="combination-p" style="margin-bottom: 20px;">A matematikusok máig számontartják (félig-meddig viccesen, félig-meddig Erdősnek emléket állítandó) az egyes matematikusokhoz rendelt ún. Erdős-számot, amely azt fejezi ki, hogy a publikálás által mennyire kerültek közel hozzá.</p>
+            <p class="combination-p">A matematikusok máig számontartják (félig-meddig viccesen, félig-meddig Erdősnek emléket állítandó) az egyes matematikusokhoz rendelt ún. Erdős-számot, amely azt fejezi ki, hogy a publikálás által mennyire kerültek közel hozzá.</p>
+            <p class="combination-p" style="margin-bottom: 20px;"><i>Forrás: Wikipédia</i></p>
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="combination.js"></script>
 </body>
 
 </html>
